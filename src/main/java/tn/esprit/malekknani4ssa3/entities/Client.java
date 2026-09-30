@@ -3,7 +3,7 @@ package tn.esprit.malekknani4ssa3.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDate;
-
+import java.util.Set;
 @Entity
 @Getter
 @Setter
@@ -22,4 +22,6 @@ public class Client {
     private String telephone;
     private String numPermis;
     private LocalDate dateInscription;
+    @OneToMany(mappedBy = "client")
+    private Set<Reservation> reservations;
 }

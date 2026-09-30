@@ -1,5 +1,5 @@
 package tn.esprit.malekknani4ssa3.entities;
-
+import java.util.Set;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,4 +19,9 @@ public class Agence {
     private String ville;
     private String adresse;
     private String telephone;
+    @OneToMany(mappedBy = "agence")
+    private Set<Vehicule> vehicules;
+
+    @OneToMany(mappedBy = "agence")
+    private Set<Employe> employes;
 }

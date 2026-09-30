@@ -1,5 +1,5 @@
 package tn.esprit.malekknani4ssa3.entities;
-
+import java.util.Set;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,4 +16,7 @@ public class Equipement {
     private Long idEquipement;
 
     private String libelle;
+
+    @ManyToMany(mappedBy = "equipements")
+    private Set<Vehicule> vehicules;
 }
