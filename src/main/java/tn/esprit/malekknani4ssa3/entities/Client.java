@@ -22,6 +22,6 @@ public class Client {
     private String telephone;
     private String numPermis;
     private LocalDate dateInscription;
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "client",  cascade = CascadeType.PERSIST)
     private Set<Reservation> reservations;
 }
